@@ -1,0 +1,43 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int BS(int arr[], int l, int r, int f)
+{
+	if(r>0)
+	{
+		int m;
+		m=(l+r)/2;
+		if(arr[m]==f)
+		{
+			printf("found in position %d", m+1) ;
+		}
+		else if(arr[m]>f)
+		{
+			return BS(arr, l, m-1, f);
+		}
+		else if(arr[m]<f)
+		{
+			return BS(arr, m+1, r, f);
+		}
+		
+	}
+	else
+		{
+			printf("Not Found");
+		}
+}
+
+int main(void)
+{
+	int l=0, x, n, i;
+	scanf("%d", &n);
+	int arr[n];
+	for(i=0;i<n;i++)
+	{
+		scanf("%d", &arr[i]);
+	}
+	scanf("%d", &x);
+	BS(arr, l, n-1, x);
+	return 0;
+}
