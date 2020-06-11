@@ -1,0 +1,29 @@
+# Binary Search
+
+def BS(arr, r, l, f):
+ if (r>l):
+  
+    m=int(((r-1)+l)//2)
+    
+    if (arr[m]==f):
+      t=m+1
+      print("The number is found in %d position" %t)  
+    
+    elif (arr[m]<f):
+      return BS(arr, r, m+1, f)
+
+    elif (arr[m]>f):
+      return BS(arr, m-1, l, f)
+
+
+ else:
+      print("the number is not found in the array")
+
+   
+
+arr=list(map(int,input().split()))
+r=len(arr)
+l=0
+f=int(input())
+
+BS(arr, r, l, f) 
