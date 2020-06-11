@@ -4,7 +4,7 @@ using namespace std;
 
 int BS(int arr[], int l, int r, int f)
 {
-	if(r>0)
+	if(r>l)
 	{
 		int m;
 		m=(l+r)/2;
